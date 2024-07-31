@@ -1,0 +1,6 @@
+{
+  "server": {
+    "HOST": "prod-server-host",
+    "PORT": 9000
+  }
+}
