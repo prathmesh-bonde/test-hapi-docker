@@ -2,5 +2,8 @@
   "server": {
     "HOST": "0.0.0.0",
     "PORT": 3000
+  },
+  "db": {
+    "MONGO_URI": "mongodb://mongo:27017/sample_mflix"
   }
 }
