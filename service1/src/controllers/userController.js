@@ -1,7 +1,20 @@
-import { helloUser } from '../services/index.js';
+import { InternalServerError } from '../errors/InternalServerError.js';
+import { userService } from '../services/index.js';
 
-const userHandler = async (request, h) => {
-	return helloUser(request);
+const helloUser = async (request, h) => {
+	return userService.helloUser(request);
 };
 
-export { userHandler };
+const createUser = async (request, h) => {
+	try {
+		const db = request.mongo.db;
+		const userData = request.payload;
+		const newUser = await userService.createUser(userData, db);
+		console.log(newUser.message);
+		return h.response(newUser).code(201);
+	} catch (error) {
+		throw new InternalServerError();
+	}
+};
+
+export { helloUser, createUser };
