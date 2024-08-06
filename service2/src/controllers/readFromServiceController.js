@@ -2,7 +2,7 @@ import { readFromService } from '../services/readFromService.js';
 
 const readFromServiceHandler = async (request, h) => {
 	try {
-		const url = 'http://localhost:3000/user';
+		const url = process.env.SERVICE_URL;
 		const options = {
 			payload: request.payload,
 			headers: {
@@ -10,7 +10,9 @@ const readFromServiceHandler = async (request, h) => {
 			}
 		};
 
+		console.log('hitting -- ');
 		const { response, statusCode } = await readFromService(url, options);
+		console.log('response -- ', response);
 		return h.response(response).code(statusCode);
 	} catch (error) {
 		throw new Error(error);
