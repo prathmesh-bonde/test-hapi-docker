@@ -4,6 +4,7 @@ import { Server } from '@hapi/hapi';
 import HapiMongoDB from 'hapi-mongodb';
 import { helloPlugin } from './plugins/helloPlugin.js';
 import { dbPlugin } from './plugins/dbPlugin.js';
+import { readFromServicePlugin } from './plugins/readFromServicePlugin.js';
 
 const createServer = async () => {
 	const server = new Server({
@@ -24,6 +25,9 @@ const createServer = async () => {
 		},
 		{
 			plugin: dbPlugin
+		},
+		{
+			plugin: readFromServicePlugin
 		}
 	]);
 

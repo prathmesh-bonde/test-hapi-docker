@@ -2,7 +2,7 @@ import { readFromServiceHandler } from '../controllers/readFromServiceController
 
 const readFromServiceRoute = [
 	{
-		method: 'GET',
+		method: 'POST',
 		path: '/readFromService',
 		handler: readFromServiceHandler
 	}
