@@ -1,0 +1,23 @@
+services:
+  hapi-poc-test-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hapijs-test-2
+    env_file: .env
+    ports:
+      - '8000:8000'
+    volumes:
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    command: node src/index.js
+    networks:
+      - hapi-app-test
+
+volumes:
+  node_modules:
+
+networks:
+  hapi-app-test:
+    external: true
+    name: service1_hapi-app-test

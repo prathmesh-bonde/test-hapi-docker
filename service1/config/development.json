@@ -4,6 +4,6 @@
     "PORT": 3000
   },
   "db": {
-    "MONGO_URI": "mongodb://mongo:27017/sample_mflix"
+    "MONGO_URI": "mongodb://mongo-test:27017/sample_mflix"
   }
 }

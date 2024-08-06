@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+public/
+*.config.js
+*.min.js
+*.bundle.js
+*.json
+*.log
+*.tmp
+*.env
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.md
